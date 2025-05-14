@@ -6,7 +6,7 @@ console.log('basic01.js');
 //var 
 //let const
 
-let a = 10;     //  
+let a = 10;     //   
 let ss = '문자열';
 let sss = "문자열";
 let d = 123.123;
