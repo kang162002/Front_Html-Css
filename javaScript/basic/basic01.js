@@ -23,10 +23,14 @@ a = 30;
 
 
 console.log ('점심\ "순대국밥\"');
-console.log('점심"순대국밥"');
-console.log("점심'순대국밥");
-console.log(`점심"순대국밥"`);
- 
+console.log('점심"순대국밥!!"');
+console.log("점심'순대국밥!!");
+console.log(`점심"순대국밥!!"`);
+
+
+
+
+
 
 let x;
 
