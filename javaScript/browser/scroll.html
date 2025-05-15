@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            width: 5000px;
+            height: 5000px;
+        }
+
+        #conatiner {
+            position: fixed;
+            left: 120px;
+            top: 120px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <h1>scroll.html</h1>
+
+    <div id="conatiner">
+        <button onclick="scollToFunc()">scrollTo</button>
+        <button onclick="scollByFunc()">scrollBy</button>
+
+    </div>
+
+    <script>
+        function scollToFunc() {
+            window.scrollTo({
+
+                left:0,
+                top:0,
+                behavior:'smooth'
+            }); //x:0 y:0         //scrollTo 
+
+        }
+        function scollByFunc() {
+            window.scrollBy({
+                left:500,
+                top:500,
+                behavior:'smooth'
+            }); // left:500 top:500
+        }
+
+    </script>
+
+
+</body>
+
+</html>
