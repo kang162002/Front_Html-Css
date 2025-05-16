@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .red {
+            color: red;
+        }
+
+        .blue {
+            color: blue;
+        }
+
+          .big-font {
+            font-size: 60px;
+          }
+
+
+    </style>
+
+  
+
+</head>
+
+<body>
+
+
+    <p id="pid">text 적당한 글자</p>
+
+    <a id="aid" href="https://netflix.com">넷플릭스 이동</a>
+
+    <div id="container">
+
+    </div>
+
+
+
+
+    <script>
+
+        //클래스 조작   노드.classList.add  노드.classList.remove   노드.classList.toggle
+        document.getElementById('pid').classList.add('blue');   //add를 이용한 클래스 조작
+        document.getElementById('pid').classList.add('red');
+
+        //toggle속성 
+        document.getElementById('pid').addEventListener('click', ()=>{
+            document.getElementById('pid').classList.toggle('big-font');
+        })
+
+
+        //속성 조작 (메서드)
+
+        console.log(document.getElementById('pid').getAttribute('class'));
+
+        //노드.getAttribute         노드.setAttribute       노드.removeAttribute
+        const a_id = document.getElementById('aid');
+        console.log(a_id.getAttribute('href'));
+        a_id.setAttribute('href', 'https://tving.com');
+        a_id.setAttribute('target','_blank');
+
+        a_id.removeAttribute('target');
+
+        const divCon = document.getElementById('container');
+
+        const newP = document.createElement("p");// p
+        const txtNode = document.createTextNode("p태그 내부 글씨 Text");
+        const attrNode = document.createAttribute("class");
+        attrNode.value = 'red'; // 태그안에 class="red"
+
+        newP.appendChild(txtNode);      //  p태그에 내부 글씨노트 추가      <p>p태그 내부 글씨Text</p>
+       
+        newP.setAttribute(attrNode);    //  p 태그에 속성 노드 추가         <p class "red">p태그 내부 글씨 txt</p>
+
+
+        divCon.appendChild(newP) // div id = "container"><p class="red">p태그 내부 글씨</p></div>'
+
+       // divCon.innerHTML ='<p class="red">p태그 내부 글씨</p>'
+
+        //순수 javascript vs jQuery 라이브러리 vs react 데이터기반 처리 방식
+        //$('#container'), append('<p class="red">p태그 내부 글씨 text</p>');
+
+        //if(true) 요소를 추가
+
+        //반복문[1,2,3] 화면에 요소를 추가
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: bisque;
+
+        }
+
+    </style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+    <h1 id="target">이벤트 등록</h1>
+
+    <button onclick="event1()">이벤트 버튼1</button>
+    <button id="btn_evt2">이벤트 버튼2</button>
+    <button id="btn_evt3">이벤트 버튼3</button>
+
+    <div id="box">박스 버튼대신에</div>
+
+    <script>
+        function event1() {
+            console.log('event1()');
+            //노드.style.속성명 = 속상값;
+            //id/class 
+            document.getElementById('target').style.color = 'red';
+        }
+
+        function event2(){
+            console.log('event2()')
+            document.getElementById('target').style.fontSize ='40px';
+        }
+        
+          function event3() {
+            console.log('event3()');
+        }
+
+       
+
+        document.getElementById('btn_evt2').onclick = event2;    //  누르면 이벤트 2가 실행
+
+        
+        
+      const btn_evt3 = document.getElementById('btn_evt3');
+      //    btn_evt2 에 등록
+      btn_evt3.addEventListener('click',event3);
+      //이벤트를 등록하겠다
+
+      document.querySelector('#box').addEventListener('click', ()=>{
+            console.log('버튼대신에 있는div 박스 클릭함');
+            document.querySelector('#box').style.backgroundColor = 'orange';
+
+      });
+
+
+       document.querySelector('#box').addEventListener('dblclick', ()=>{
+            console.log('버튼대신에 있는div 박스 클릭함');// 두번 클릭 
+
+      });
+
+      //등록된 함수로 이동
+       document.querySelector('#box').addEventListener('click', ()=>{
+            console.log('버튼대신에 있는div 박스 클릭함');
+            location.href = 'https://netflix.com'; // └  클릭시 사이트 경로 이동
+            //  <a href="https://netflix.com"></a> 
+
+      });
+
+
+    </script>
+</body>
+
+</html>
