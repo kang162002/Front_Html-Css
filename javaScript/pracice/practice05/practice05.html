@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+.box {
+width:100px;
+height:100px;
+border: 1px solid black;
+}
+.back-red{
+background-color: red;
+}
+.back-blue{
+background-color: blue;
+}
+</style>
+</head>
+<body>
+<div class="box"></div>
+<button onclick="changeColor()">배경색 바꾸기</button>
+
+<script>
+/* 코딩부분 */
+
+
+function changeColor (){
+    const box = document.querySelector('.box')
+    //box 요소 가저오기
+    const user = prompt("1.빨강 | 2.파랑 중 고르세요")  
+    box.classList.remove('back-red', 'back-blue');  // 속성값 삭제 (컬러)
+    if(user === "1" ){
+        box.classList.add("back-red") //빨강
+    }else if (user === "2"){
+        box.classList.add("back-blue")// 파랑
+    }else {
+        alert("잘못누름")
+    }
+}
+
+// function changeColor (){
+//     let input = prompt ("1번 빨간색 2번 파란색 선택")
+//     console.log(input);
+    
+//     const box = document.getElementsByClassName('box');
+//     //1 >red
+//     //2 >blue
+//     if(input == 1 ){
+//         console.log('red');
+//         box.style.backgroundColor = 'red';
+//     }else if (input== 2 ){
+//         console.log('blue');
+//         box.style.backgroundColor = '';
+//     }else{
+//         alert('잘못입력')
+//     }
+
+// }
+
+function changeColor (){
+    let input = prompt("1번 빨간색 2번 파란색 선택")
+    const box =document.getElementsByClassName('box');
+
+    if(input == 1){
+        console.log('red')
+        box.setAttribute('class', 'box back=red')
+    }
+}
+
+</script>
+</body>
+</html>
